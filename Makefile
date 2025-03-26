@@ -30,7 +30,7 @@ fmt:
 
 # Run unit tests
 unit:
-	uv run --frozen --isolated --extra dev \
+	uv run --frozen --isolated --all-extras \
 		coverage run \
 		--source=$(SRC) \
 		-m pytest \
