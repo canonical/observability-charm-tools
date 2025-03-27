@@ -13,6 +13,7 @@ dependencies = [
 dev = [
     "coverage",
     "ops[testing] >= 2.18",
+    "pyright",
     "pytest",
     "ruff",
 ]

@@ -6,7 +6,7 @@ from typing import Dict, List, Optional, Type
 
 from ops import ActiveStatus, BlockedStatus, MaintenanceStatus, StatusBase, WaitingStatus
 
-from observability_charm_tools.exceptions import (
+from ..exceptions import (
     BlockedStatusError,
     MaintenanceStatusError,
     WaitingStatusError,
@@ -156,5 +156,4 @@ def get_first_worst_status(statuses: List[StatusBase]) -> StatusBase:
                 f" ActiveStatus]"
             )
 
-    status = blocked or waiting or maintenance or active
-    return status
+    return blocked or waiting or maintenance or active

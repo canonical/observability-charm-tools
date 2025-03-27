@@ -27,9 +27,11 @@ jobs:
       - name: Set up Python 3.8
         uses: actions/setup-python@v4
         with:
-          python-version: 3.8
+          python-version-file: "pyproject.toml"
       - name: Install uv
         uses: astral-sh/setup-uv@v5
+      - name: Install the project
+        run: uv sync --all-extras
       - name: Install dependencies
         run: |
           uv pip install -r pyproject.toml --all-extras
@@ -46,9 +48,11 @@ jobs:
       - name: Set up Python 3.8
         uses: actions/setup-python@v4
         with:
-          python-version: 3.8
+          python-version-file: "pyproject.toml"
       - name: Install uv
         uses: astral-sh/setup-uv@v5
+      - name: Install the project
+        run: uv sync --all-extras
       - name: Install dependencies
         run: |
           uv pip install -r pyproject.toml --all-extras
@@ -65,11 +69,13 @@ jobs:
       - name: Set up Python 3.8
         uses: actions/setup-python@v4
         with:
-          python-version: 3.8
+          python-version-file: "pyproject.toml"
       - name: Install uv
         uses: astral-sh/setup-uv@v5
+      - name: Install the project
+        run: uv sync --all-extras
       - name: Install dependencies
         run: |
-          uv pip install -r pyproject.toml --all-extras
+          uv pip install -e . -r pyproject.toml --all-extras
       - name: Run tests
         run: make unit
