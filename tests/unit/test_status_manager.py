@@ -3,8 +3,7 @@ from contextlib import nullcontext
 import pytest
 from ops import ActiveStatus, BlockedStatus, MaintenanceStatus, WaitingStatus
 
-from observability_charm_tools.status_handling import get_first_worst_status
-from observability_charm_tools.status_handling.status_manager import StatusManager
+from src.observability_charm_tools.status_handling import StatusManager, get_first_worst_status
 
 
 class CustomError(Exception):

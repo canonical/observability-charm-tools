@@ -6,7 +6,7 @@ from typing import Dict, List, Optional, Type
 
 from ops import ActiveStatus, BlockedStatus, MaintenanceStatus, StatusBase, WaitingStatus
 
-from observability_charm_tools.exceptions import (
+from ..exceptions import (
     BlockedStatusError,
     MaintenanceStatusError,
     WaitingStatusError,
